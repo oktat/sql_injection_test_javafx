@@ -2,6 +2,8 @@
 
 SQL injekció teszteléséhez, bemutatásához.
 
+A program a sikeres vagy sikertelen bejelentkezést a konzolon közli.
+
 ## Telepítés
 
 * Hozzunk létre a projekt gyökérkönyvtárában egy database.sqlite fájlt.
