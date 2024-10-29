@@ -27,3 +27,15 @@ SQL injekció példa:
 * ' or 1=1 --
 
 Az első változatnál ismerni kell a felhasználót, a másodiknál azt sem.
+
+## Állítási lehetőség
+
+A src/main/java/lan/zold/models/UserSource.java fájlban beállítható, hogy Statement vagy PreperedStatement osztállyal legyen megvalósítva az adatbázis elérés.
+
+A Statemen használata, ami nem véd az SQL injekció ellen:
+
+```java
+final boolean PREPARED = false;
+```
+
+Ha szeretnék védelmet bemutatni, akkor állítsuk **true** értékre.
