@@ -1,0 +1,13 @@
+-- database: ../database.sqlite
+
+create table users(
+  id integer not null primary key autoincrement,
+  user text,
+  pass text
+);
+
+insert into users
+(user, pass)
+values
+("admin", "titok"),
+("janos", "titok");
