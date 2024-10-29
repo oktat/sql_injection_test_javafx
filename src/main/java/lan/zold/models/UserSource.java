@@ -32,11 +32,8 @@ public class UserSource {
     conn = database.connect();
     String sql = "select user, pass from users where user = '" + user + "' and pass = '" + pass + "'";
     System.out.println(sql);
-    // String sqlProteced = "select user, pass from users where user = ? and pass = ?";
-
     Statement st = conn.createStatement();
-    ResultSet rs = st.executeQuery(sql);
-    
+    ResultSet rs = st.executeQuery(sql);        
     if (rs.next()) {
       return true;
     }
@@ -46,12 +43,12 @@ public class UserSource {
   public boolean tryLoginPrepared(String user, String pass) throws SQLException {
     conn = database.connect();
     String sql = "select user, pass from users where user = ? and pass = ?";
-    PreparedStatement st = conn.prepareStatement(sql);
+    PreparedStatement ps = conn.prepareStatement(sql);
 
-    st.setString(1, user);
-    st.setString(2, pass);
-    // System.out.println(sql);
-    ResultSet rs = st.executeQuery();
+    ps.setString(1, user);
+    ps.setString(2, pass);
+    System.out.println(ps.toString());
+    ResultSet rs = ps.executeQuery();
     
     if (rs.next()) {
       return true;
